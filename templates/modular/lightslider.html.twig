@@ -16,6 +16,7 @@
 <script type="text/javascript">
   $(document).ready(function() {
     $("#{{ unique_id }}").lightSlider({
+        random: {{ settings.random|default('false') }},
         item: {{ settings.item|default(1) }},
         slideMove: {{ settings.slideMove|default(3) }},
         slideMargin: {{ settings.slideMargin|default(5) }},
