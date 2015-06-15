@@ -9,6 +9,7 @@
 (function ($, undefined) {
     "use strict";
     var defaults = {
+        order: "filename",
         item: 3,
         autoWidth: false,
         slideMove: 1,
@@ -323,7 +324,9 @@
                         $children.not(".active").css('display', 'none');
                     }
                 }
-                if (settings.loop === true && settings.mode === 'slide') {
+
+                if (settings.order === 'random') {
+                    scene = Math.floor(Math.random() * $children.length);
                     $children.eq(scene).addClass('active');
                 } else {
                     $children.first().addClass('active');
@@ -480,6 +483,10 @@
                                 sc = 0;
                             }
                         }
+                    }
+
+                    if (settings.order === 'random') {
+                        sc = Math.floor(Math.random() * $children.length);
                     }
 
                     if (!this.doCss() && settings.mode === "fade" && t === false) {
