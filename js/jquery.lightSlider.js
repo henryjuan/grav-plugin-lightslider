@@ -9,7 +9,7 @@
 (function ($, undefined) {
     "use strict";
     var defaults = {
-        order: "filename",
+        random: true,
         item: 3,
         autoWidth: false,
         slideMove: 1,
@@ -325,7 +325,7 @@
                     }
                 }
 
-                if (settings.order === 'random') {
+                if (settings.random === true) {
                     scene = Math.floor(Math.random() * $children.length);
                     $children.eq(scene).addClass('active');
                 } else {
@@ -422,7 +422,7 @@
                     $slide.parent().find('.lSPager').css(gMargin, settings.galleryMargin + 'px');
                     refresh.createPager();
                 }
-                
+
                 setTimeout(function () {
                     refresh.init();
                 }, 0);
@@ -485,7 +485,7 @@
                         }
                     }
 
-                    if (settings.order === 'random') {
+                    if (settings.random === true) {
                         sc = Math.floor(Math.random() * $children.length);
                     }
 
